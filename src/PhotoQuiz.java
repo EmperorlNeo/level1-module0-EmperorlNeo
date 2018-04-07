@@ -61,42 +61,40 @@ public class PhotoQuiz {
 		// this until step 12)
 		panel.removeAll();
 		// 10. find another image and create it (might take more than one line of code)
-		Component image2=Component();
-		image2 = createImage("https://cosmos-magazine.imgix.net/file/spina/photo/12095/spiderpaws_image7_pinktoed_tarantula.jpg?fit=clip&w=835");
+		Component image2 = Component();
+		image2 = createImage(
+				"https://cosmos-magazine.imgix.net/file/spina/photo/12095/spiderpaws_image7_pinktoed_tarantula.jpg?fit=clip&w=835");
 		// 11. add the second image to the quiz window
-		JLabel label2= new JLabel();
+		JLabel label2 = new JLabel();
 		panel.add(label2);
 		panel.add(image2);
 		// 12. pack the quiz window
 		quizWindow.pack();
 		// 13. ask another question
 		label2.setText("How many legs does this spider have?");
-		
-		String s=JOptionPane.showInputDialog("YOUR ANSWER:");
+
+		String s = JOptionPane.showInputDialog("YOUR ANSWER:");
 		// 14+ check answer, say if correct or incorrect, etc.
-		if(s.equals("8")) {
+		if (s.equals("8")) {
 			JOptionPane.showMessageDialog(label, "CORRECT");
 
-		}		
-			else {
+		} else {
 			JOptionPane.showMessageDialog(label, "INCORRECT");
 		}
-		if(b.equalsIgnoreCase("no") && s.equalsIgnoreCase("8")) {
+		if (b.equalsIgnoreCase("no") && s.equalsIgnoreCase("8")) {
 			JOptionPane.showMessageDialog(null, "Good job, you got 2/2");
-		}
-		else if(b.equalsIgnoreCase("no") && !s.equalsIgnoreCase("8")) {
-			
+		} else if (b.equalsIgnoreCase("no") && !s.equalsIgnoreCase("8")) {
+
 			JOptionPane.showMessageDialog(null, "You got 1/2");
-		
-		}
-		else if(b.equalsIgnoreCase("yes") && s.equalsIgnoreCase("8")) {
+
+		} else if (b.equalsIgnoreCase("yes") && s.equalsIgnoreCase("8")) {
 			JOptionPane.showMessageDialog(null, "You got 1/2");
 		}
-		
-		if(b.equalsIgnoreCase("yes") && !s.equalsIgnoreCase("8")){
-			JOptionPane.showMessageDialog(null,"Better luck next time. 0/2");
+
+		if (b.equalsIgnoreCase("yes") && !s.equalsIgnoreCase("8")) {
+			JOptionPane.showMessageDialog(null, "Better luck next time. 0/2");
 		}
-		
+
 	}
 
 	private static Component Component() {
