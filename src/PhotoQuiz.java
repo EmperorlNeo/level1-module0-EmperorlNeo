@@ -74,27 +74,26 @@ public class PhotoQuiz {
 		
 		String s=JOptionPane.showInputDialog("YOUR ANSWER:");
 		// 14+ check answer, say if correct or incorrect, etc.
-		if(s.equalsIgnoreCase("eight")) {
-			JOptionPane.showMessageDialog(label, "CORRECT");
-		}
-			else if(s.equals("8")) {
+		if(s.equals("8")) {
 			JOptionPane.showMessageDialog(label, "CORRECT");
 
 		}		
 			else {
 			JOptionPane.showMessageDialog(label, "INCORRECT");
-
 		}
-		if(b.equalsIgnoreCase("no") && s.equalsIgnoreCase("eight") || s.equalsIgnoreCase("8")) {
+		if(b.equalsIgnoreCase("no") && s.equalsIgnoreCase("8")) {
 			JOptionPane.showMessageDialog(null, "Good job, you got 2/2");
 		}
-		else if(b.equalsIgnoreCase("yes") && s.equalsIgnoreCase("eight") || s.equalsIgnoreCase("8")) {
+		else if(b.equalsIgnoreCase("no") && !s.equalsIgnoreCase("8")) {
+			
+			JOptionPane.showMessageDialog(null, "You got 1/2");
+		
+		}
+		else if(b.equalsIgnoreCase("yes") && s.equalsIgnoreCase("8")) {
 			JOptionPane.showMessageDialog(null, "You got 1/2");
 		}
-		else if(b.equalsIgnoreCase("yes") || s.equalsIgnoreCase("eight") || s.equalsIgnoreCase("8")) {
-			JOptionPane.showMessageDialog(null, "Good job, you got 1/2");
-		}
-		else {
+		
+		if(b.equalsIgnoreCase("yes") && !s.equalsIgnoreCase("8")){
 			JOptionPane.showMessageDialog(null,"Better luck next time. 0/2");
 		}
 		
