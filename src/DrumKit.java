@@ -131,7 +131,7 @@ public class DrumKit extends MouseAdapter {
 			playSound("NormalDrum.wav");
 		}
 		// 17. ...use the playSound method to play a drum sound.
-
+		
 		// 18. Add more images to make a drumkit. Remember to add a mouse listener to
 		// each one.
 	}
