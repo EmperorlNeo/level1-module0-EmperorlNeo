@@ -1,9 +1,11 @@
+import java.applet.AudioClip;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -44,7 +46,9 @@ public class JackInTheBox implements ActionListener {
 			//System.out.println(timesPressed);
 		}
 		if (timesPressed == 5) {
-			showPicture("wwqe.jpg");
+			showPicture("Jack.jpg");
+		
+			playSound("SpookyJack.wav");
 		}
 	}
 
@@ -56,6 +60,7 @@ public class JackInTheBox implements ActionListener {
 			frame.add(imageLabel);
 			frame.setVisible(true);
 			frame.pack();
+			frame.setLocation(700, 200);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -77,5 +82,14 @@ public class JackInTheBox implements ActionListener {
 			return new JLabel();
 		}
 	}
+	private void playSound(String soundFile) { 
+	     try {
+	          AudioClip sound = JApplet.newAudioClip(getClass().getResource(soundFile));
+	          sound.play();
+	     } catch (Exception e) {
+	          e.printStackTrace();
+	     }
+	}
+
 
 }
