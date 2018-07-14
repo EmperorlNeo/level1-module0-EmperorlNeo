@@ -18,6 +18,8 @@ public class Houses {
 		house("large", null);
 		house("small", null);
 		house("medium", null);
+		x.penUp();
+		x.move(10000);
 	}
 
 	public static void house(String height, String color) {
