@@ -8,7 +8,9 @@ void draw(){
   background(0,0,0);
   raindrop();
   Bucket();
-  checkCatch(mouseX);
+  if(RaindropY>870){
+  checkCatch(RaindropX);
+  }
   fill(255, 255, 255);
   textSize(16);
   text("Score: " + score, 20, 20);
@@ -33,7 +35,7 @@ public void Bucket(){
 }
 
 public void checkCatch(int x){
-     if (x > mouseX && x < mouseX+100)
+     if (x > mouseX && x < mouseX+50)
           score++;
      else if (score > 0) 
           score--;
