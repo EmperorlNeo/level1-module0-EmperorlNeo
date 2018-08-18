@@ -3,39 +3,45 @@ Minim minim;
 AudioSample sound;
 PImage backgroundImage;
 int pongX;
-int pongS =15;
+int pongSY =15;
 int pongY;
+int pongSX = 15;
 void setup(){
-  size(800,800);
+  size(500,500);
   minim = new Minim (this);
 sound = minim.loadSample("pong.wav", 128);
-sound.trigger();
+
 backgroundImage = loadImage("image.jpg");
 }
 
 void draw(){
   background(255,255,255);
   image(backgroundImage,0,0);
-  image(backgroundImage,0,0, 800, 800);
+  image(backgroundImage,0,0, 500, 500);
     fill(0,0,0);
   stroke(0,0,0);
   ellipse(pongX,pongY,40,40);
-  rect(mouseX, 770, 100,100);
-  if(pongX>800){
-  pongS=pongS*-1;
+  rect(mouseX, 470, 100,100);
+  if(pongX>500){
+  pongSX=pongSX*-1;
   }
   else if(pongX<0){ 
-    pongS=pongS*-1;
+    pongSX=pongSX*-1;
   }
-  pongX+=pongS;
-  if(pongY>760){
-   pongS=pongS*-1; 
+  pongX+=pongSX;
+  if(pongY>500){
+   pongSY=pongSY*-1; 
   }
-  else if(pongY<0){
-  pongS=pongS*-1;
+  if(pongY<0){
+  pongSY=pongSY*-1;
   }
-  pongY+=pongS; 
-
+  pongY+=pongSY; 
+if(intersects(pongX, pongY, mouseX, 470, 100)){
+ pongSY=pongSY*-1; 
+}
+if(pongY==510){
+ sound.trigger(); 
+}
 }
 boolean intersects(int ballX, int ballY, int paddleX, int paddleY, int paddleLength) {
      if (ballY > paddleY && ballX > paddleX && ballX < paddleX + paddleLength)
